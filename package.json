@@ -9,7 +9,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "check": "npm run lint && npm run ts:check",
+    "ts:check": "tsc --noEmit"
   },
   "dependencies": {
     "@uiball/loaders": "1.2.6",
