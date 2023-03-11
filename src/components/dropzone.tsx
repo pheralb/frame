@@ -24,9 +24,9 @@ const Dropzone: FunctionComponent<{ setFile: Dispatch<File> }> = ({
   return (
     <div {...getRootProps()}>
       <input {...getInputProps()} />
-      <p>Drag 'n' drop some files here, or click to select files</p>
-      {isDragAccept && <p>Drop it like it's hot!</p>}
-      {isDragReject && <p>Don't drop it like it's hot!</p>}
+      <p>Drag & drop some files here, or click to select files</p>
+      {isDragAccept && <p>Drop it</p>}
+      {isDragReject && <p>Only .png, .jpeg, .jpg, .webp, .svg files are accepted</p>}
     </div>
   );
 };
