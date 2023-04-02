@@ -6,6 +6,6 @@ export const gradients = [
   "bg-gradient-to-r from-indigo-200 via-red-200 to-yellow-100",
   "bg-gradient-to-r from-yellow-100 via-yellow-300 to-yellow-500",
   "bg-gradient-to-r from-yellow-200 via-green-200 to-green-500",
-  "bg-gradient-to-r from-yellow-200 via-green-200 to-green-500",
+  "bg-gradient-to-r from-rose-300 to-rose-500",
   "bg-gradient-to-r from-red-200 via-red-300 to-yellow-200",
 ];
