@@ -2,6 +2,7 @@ import clsx from "clsx";
 import { Dispatch, FunctionComponent, useCallback } from "react";
 
 import { useDropzone } from "react-dropzone";
+import { AddMediaImage } from "iconoir-react";
 
 const Dropzone: FunctionComponent<{ setFile: Dispatch<File> }> = ({
   setFile,
@@ -33,7 +34,8 @@ const Dropzone: FunctionComponent<{ setFile: Dispatch<File> }> = ({
       )}
     >
       <input {...getInputProps()} />
-      <div className="flex items-center justify-center w-full h-full cursor-default">
+      <div className="flex items-center justify-center w-full h-full cursor-default space-x-2">
+        <AddMediaImage width={18} stroke="1" />
         {isDragAccept ? (
           <p>Ready?</p>
         ) : (
