@@ -17,11 +17,11 @@
     "@uiball/loaders": "1.2.6",
     "clsx": "1.2.1",
     "html2canvas": "1.4.1",
+    "iconoir-react": "6.5.0",
     "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-dropzone": "14.2.3",
-    "react-icons": "4.8.0",
     "react-moveable": "0.48.0",
     "react-resizable": "3.0.5",
     "zustand": "4.3.7"
