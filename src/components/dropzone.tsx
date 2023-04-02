@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { Dispatch, FunctionComponent, useCallback } from "react";
 
 import { useDropzone } from "react-dropzone";
@@ -22,11 +23,26 @@ const Dropzone: FunctionComponent<{ setFile: Dispatch<File> }> = ({
     });
 
   return (
-    <div {...getRootProps()}>
+    <div
+      {...getRootProps()}
+      className={clsx(
+        "w-screen h-screen",
+        "border-2 border-dashed duration-150",
+        isDragAccept ? "border-green-800" : "border-neutral-700",
+        isDragReject && "border-red-800"
+      )}
+    >
       <input {...getInputProps()} />
-      <p>Drag & drop some files here, or click to select files</p>
-      {isDragAccept && <p>Drop it</p>}
-      {isDragReject && <p>Only .png, .jpeg, .jpg, .webp, .svg files are accepted</p>}
+      <div className="flex items-center justify-center w-full h-full cursor-default">
+        {isDragAccept ? (
+          <p>Ready?</p>
+        ) : (
+          <p>Drag 'n' drop some files here, or click here</p>
+        )}
+        {isDragReject && (
+          <p>Only .png, .jpeg, .jpg, .webp, .svg files are accepted</p>
+        )}
+      </div>
     </div>
   );
 };
