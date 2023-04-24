@@ -15,7 +15,7 @@
     "ts:check": "tsc --noEmit"
   },
   "dependencies": {
-    "@radix-ui/react-dialog": "1.0.3",
+    "@radix-ui/react-dialog": "^1.0.3",
     "@uiball/loaders": "1.2.6",
     "clsx": "1.2.1",
     "html2canvas": "1.4.1",
