@@ -1,5 +1,5 @@
 {
-  "name": "@pheralb/screenshot",
+  "name": "frame",
   "description": "Create screenshots with beautiful gradients",
   "version": "0.1.0",
   "license": "MIT",
@@ -36,6 +36,8 @@
     "eslint": "8.37.0",
     "eslint-config-next": "13.2.4",
     "postcss": "8.4.21",
+    "prettier": "2.8.8",
+    "prettier-plugin-tailwindcss": "0.2.7",
     "tailwindcss": "3.3.1",
     "typescript": "5.0.3"
   }
