@@ -7,9 +7,9 @@ interface SidebarSectionProps {
 
 const SidebarSection = (props: SidebarSectionProps) => {
   return (
-    <div className="flex flex-col pb-3 border-b border-neutral-800">
+    <div className="flex flex-col border-b border-neutral-800 pb-3">
       {props.title && (
-        <div className="mt-4 mb-4">
+        <div className="mb-4 mt-4">
           <span className="text-neutral-400">{props.title}</span>
         </div>
       )}

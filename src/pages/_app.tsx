@@ -24,7 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <ThemeProvider attribute="class" defaultTheme="system">
       <main
         className={cn(
-          `${InterFont.variable} font-sans text-sm w-screen h-screen`
+          `${InterFont.variable} h-screen w-screen font-sans text-sm`
         )}
       >
         <Header />
@@ -32,7 +32,11 @@ export default function App({ Component, pageProps }: AppProps) {
         <Toaster
           position="bottom-right"
           toastOptions={{
-            style: { background: "#171717", color: "#fff", border: "1px solid #262626" },
+            style: {
+              background: "#171717",
+              color: "#fff",
+              border: "1px solid #262626",
+            },
             className: "font-sans",
           }}
         />

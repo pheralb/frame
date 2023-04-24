@@ -4,9 +4,9 @@ export const ChangePadding = () => {
   const padding = useImageSettings((state) => state.padding);
   const setPadding = useImageSettings((state) => state.updatePadding);
   return (
-    <div className="flex flex-col space-y-1 mb-3">
+    <div className="mb-3 flex flex-col space-y-1">
       <label htmlFor="padding">Padding:</label>
-      <div className="flex items-center space-x-2 w-full">
+      <div className="flex w-full items-center space-x-2">
         <input
           id="padding"
           type="range"
@@ -27,7 +27,7 @@ export const ChangeRounded = () => {
   return (
     <div className="flex flex-col space-y-1">
       <label htmlFor="rounded">Rounded:</label>
-      <div className="flex items-center space-x-2 w-full">
+      <div className="flex w-full items-center space-x-2">
         <input
           id="rounded"
           type="range"

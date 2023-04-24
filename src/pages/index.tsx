@@ -32,7 +32,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <div className="flex min-h-screen flex-col items-center justify-center">
       {!image ? (
         <Dropzone setFile={setImage} />
       ) : (
@@ -72,7 +72,7 @@ export default function Home() {
                     key={gradient}
                     onClick={() => setGradient(gradient)}
                     className={cn(
-                      "p-4 m-1 rounded-xl hover:-translate-y-0.5 duration-150 transition-all",
+                      "m-1 rounded-xl p-4 transition-all duration-150 hover:-translate-y-0.5",
                       gradient
                     )}
                   />
@@ -84,13 +84,13 @@ export default function Home() {
               <ChangeRounded />
             </SidebarSection>
           </Sidebar>
-          <div className="ml-64 m-3 flex flex-col">
+          <div className="m-3 ml-64 flex flex-col">
             <div ref={getImage}>
               <div style={divStyle} className={cn(gradient)}>
                 <img
                   src={URL.createObjectURL(image)}
                   alt="image"
-                  className="w-full h-full object-cover"
+                  className="h-full w-full object-cover"
                 />
               </div>
             </div>

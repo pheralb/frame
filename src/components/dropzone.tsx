@@ -27,14 +27,14 @@ const Dropzone: FunctionComponent<{ setFile: Dispatch<File> }> = ({
     <div
       {...getRootProps()}
       className={clsx(
-        "w-screen h-screen",
+        "h-screen w-screen",
         "border-2 border-dashed duration-150",
         isDragAccept ? "border-green-800" : "border-neutral-700",
         isDragReject && "border-red-800"
       )}
     >
       <input {...getInputProps()} />
-      <div className="flex items-center justify-center w-full h-full cursor-default space-x-2">
+      <div className="flex h-full w-full cursor-default items-center justify-center space-x-2">
         <AddMediaImage width={18} stroke="1" />
         {isDragAccept ? (
           <p>Ready?</p>

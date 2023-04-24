@@ -5,7 +5,7 @@ const ChangeTheme = () => {
   const { theme, setTheme } = useTheme();
   return (
     <button
-      className="text-neutral-900 dark:text-neutral-400 hover:text-dark dark:hover:text-white duration-100 transition-colors"
+      className="text-neutral-900 transition-colors duration-100 hover:text-dark dark:text-neutral-400 dark:hover:text-white"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
       {theme === "dark" ? <SunLight width={20} /> : <HalfMoon width={20} />}

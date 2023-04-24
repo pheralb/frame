@@ -18,8 +18,8 @@ const CustomDialog = (props: CustomDialogProps) => {
         </Button>
       </Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Overlay className="dark:bg-neutral-900/60 bg-neutral-400/50 data-[state=open]:animate-overlayShow fixed inset-0" />
-        <Dialog.Content className="border border-neutral-700 data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] max-w-[450px] translate-x-[-50%] translate-y-[-50%] rounded-[6px] dark:bg-neutral-900 p-[22px] focus:outline-none">
+        <Dialog.Overlay className="fixed inset-0 bg-neutral-400/50 data-[state=open]:animate-overlayShow dark:bg-neutral-900/60" />
+        <Dialog.Content className="fixed left-[50%] top-[50%] max-h-[85vh] w-[90vw] max-w-[450px] translate-x-[-50%] translate-y-[-50%] rounded-[6px] border border-neutral-700 p-[22px] focus:outline-none data-[state=open]:animate-contentShow dark:bg-neutral-900">
           <Dialog.Title className="mb-2 text-xl font-medium">
             {props.title}
           </Dialog.Title>

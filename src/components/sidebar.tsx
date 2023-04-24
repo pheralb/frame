@@ -11,7 +11,7 @@ interface SidebarSectionProps {
 
 export const Sidebar = (props: SidebarProps) => {
   return (
-    <div className="fixed top-0 left-0 h-full pb-10 overflow-x-hidden overflow-y-auto w-60 mt-[70px]">
+    <div className="fixed left-0 top-0 mt-[70px] h-full w-60 overflow-y-auto overflow-x-hidden pb-10">
       <div className="px-6">{props.children}</div>
     </div>
   );
@@ -19,9 +19,9 @@ export const Sidebar = (props: SidebarProps) => {
 
 export const SidebarSection = (props: SidebarSectionProps) => {
   return (
-    <div className="flex flex-col pb-3 border-b border-neutral-800">
+    <div className="flex flex-col border-b border-neutral-800 pb-3">
       {props.title && (
-        <div className="mt-4 mb-4">
+        <div className="mb-4 mt-4">
           <span className="text-neutral-400">{props.title}</span>
         </div>
       )}
