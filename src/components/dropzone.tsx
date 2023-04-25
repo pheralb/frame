@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { Dispatch, FunctionComponent, useCallback } from "react";
 
 import { useDropzone } from "react-dropzone";
-import { AddMediaImage } from "iconoir-react";
+import { AddMediaImage, PrivacyPolicy } from "iconoir-react";
 
 const Dropzone: FunctionComponent<{ setFile: Dispatch<File> }> = ({
   setFile,
@@ -34,16 +34,19 @@ const Dropzone: FunctionComponent<{ setFile: Dispatch<File> }> = ({
       )}
     >
       <input {...getInputProps()} />
-      <div className="flex h-full w-full cursor-default items-center justify-center space-x-2">
-        <AddMediaImage width={18} stroke="1" />
-        {isDragAccept ? (
-          <p>Ready?</p>
-        ) : (
-          <p>Drag & drop some files here, or click here</p>
-        )}
-        {isDragReject && (
-          <p>Only .png, .jpeg, .jpg, .webp, .svg files are accepted</p>
-        )}
+      <div className="flex h-full w-full cursor-default flex-col items-center justify-center space-y-3">
+        <div className="flex items-center space-x-2">
+          <AddMediaImage width={18} stroke="1" />
+          {isDragAccept || isDragReject ? (
+            <p>{isDragAccept ? "Ready?" : "Only images are allowed"}</p>
+          ) : (
+            <p>Drag & drop some files here, or click here</p>
+          )}
+        </div>
+        <div className="fixed bottom-0 flex items-center space-x-2 pb-4 text-neutral-500">
+          <PrivacyPolicy width={18} stroke="1" />
+          <p>frame does not send your image to a server.</p>
+        </div>
       </div>
     </div>
   );

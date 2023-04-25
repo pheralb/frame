@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { cn } from "@/utils";
 
 interface SidebarProps {
   children: ReactNode;
@@ -6,6 +7,7 @@ interface SidebarProps {
 
 interface SidebarSectionProps {
   title?: string;
+  border?: boolean;
   children: ReactNode;
 }
 
@@ -19,10 +21,15 @@ export const Sidebar = (props: SidebarProps) => {
 
 export const SidebarSection = (props: SidebarSectionProps) => {
   return (
-    <div className="flex flex-col border-b border-neutral-800 pb-3">
+    <div
+      className={cn(
+        "flex flex-col pb-3",
+        props.border && "border-b-2 border-neutral-800"
+      )}
+    >
       {props.title && (
         <div className="mb-4 mt-4">
-          <span className="text-neutral-400">{props.title}</span>
+          <span className="text-neutral-500">{props.title}</span>
         </div>
       )}
       {props.children}
