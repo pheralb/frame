@@ -7,16 +7,22 @@ import { Button, Dialog } from "@/ui";
 
 import Dropzone from "@/components/dropzone";
 import { Sidebar, SidebarSection } from "@/components/sidebar";
-import { ChangePadding, ChangeRounded } from "@/components/settings";
+import {
+  ChangeBgPadding,
+  ChangeBgRounded,
+  ChangeImgSize,
+} from "@/components/settings";
 import { AddMediaImage, Download } from "iconoir-react";
 
-import { useImageSettings } from "@/store/settings";
+import { useBackgroundSettings, useImageSettings } from "@/store/settings";
 
 export default function Home() {
   const [gradient, setGradient] = useState<string>("");
   const getImage = useRef<HTMLDivElement>(null);
   const [image, setImage] = useState<File | null>(null);
-  const { padding, rounded } = useImageSettings((state) => ({
+
+  // Background settings:
+  const { padding, rounded } = useBackgroundSettings((state) => ({
     padding: state.padding,
     rounded: state.rounded,
   }));
@@ -24,6 +30,16 @@ export default function Home() {
   const divStyle = {
     padding: `${padding}px`,
     borderRadius: `${rounded}px`,
+  };
+
+  // Image settings:
+  const { size } = useImageSettings((state) => ({
+    size: state.size,
+  }));
+
+  const imgSize = {
+    width: `${size}px`,
+    height: `${size}px`,
   };
 
   const handleDownload = () => {
@@ -38,7 +54,7 @@ export default function Home() {
       ) : (
         <>
           <Sidebar>
-            <SidebarSection>
+            <SidebarSection border={true}>
               <div className="flex flex-col space-y-2">
                 <Button
                   wFull
@@ -65,7 +81,7 @@ export default function Home() {
                 </Dialog>
               </div>
             </SidebarSection>
-            <SidebarSection title="Gradients">
+            <SidebarSection title="Gradients" border={true}>
               <div className="flex flex-wrap">
                 {gradients.map((gradient) => (
                   <button
@@ -79,9 +95,12 @@ export default function Home() {
                 ))}
               </div>
             </SidebarSection>
-            <SidebarSection title="Settings">
-              <ChangePadding />
-              <ChangeRounded />
+            <SidebarSection title="Background" border={true}>
+              <ChangeBgPadding />
+              <ChangeBgRounded />
+            </SidebarSection>
+            <SidebarSection title="Image">
+              <ChangeImgSize />
             </SidebarSection>
           </Sidebar>
           <div className="m-3 ml-64 flex flex-col">
@@ -90,6 +109,7 @@ export default function Home() {
                 <img
                   src={URL.createObjectURL(image)}
                   alt="image"
+                  style={imgSize}
                   className="h-full w-full object-cover"
                 />
               </div>
