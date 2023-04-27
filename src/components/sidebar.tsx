@@ -13,7 +13,7 @@ interface SidebarSectionProps {
 
 export const Sidebar = (props: SidebarProps) => {
   return (
-    <div className="fixed left-0 top-0 mt-[70px] h-full w-60 overflow-y-auto overflow-x-hidden pb-10">
+    <div className="fixed left-0 top-0 h-full w-60 overflow-y-auto overflow-x-hidden pb-10 pt-[70px]">
       <div className="px-6">{props.children}</div>
     </div>
   );

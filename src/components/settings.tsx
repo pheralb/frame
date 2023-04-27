@@ -4,7 +4,7 @@ export const ChangeBgPadding = () => {
   const padding = useBackgroundSettings((state) => state.padding);
   const setPadding = useBackgroundSettings((state) => state.updatePadding);
   return (
-    <div className="mb-3 flex flex-col space-y-1">
+    <div className="flex flex-col space-y-1">
       <label htmlFor="padding">Padding:</label>
       <div className="flex w-full items-center space-x-2">
         <input
@@ -42,23 +42,42 @@ export const ChangeBgRounded = () => {
   );
 };
 
-export const ChangeImgSize = () => {
-  const size = useImageSettings((state) => state.size);
-  const setSize = useImageSettings((state) => state.updateSize);
+export const ChangeBgShadow = () => {
+  const shadow = useBackgroundSettings((state) => state.shadow);
+  const setShadow = useBackgroundSettings((state) => state.updateShadow);
   return (
     <div className="flex flex-col space-y-1">
-      <label htmlFor="width">Size:</label>
-      <div className="flex items-center space-x-1">
+      <label htmlFor="shadow">Shadow:</label>
+      <div className="flex w-full items-center space-x-2">
         <input
-          id="width"
-          type="number"
+          id="shadow"
+          type="range"
           min="0"
-          maxLength={500}
-          value={size}
-          onChange={(e) => setSize(parseInt(e.target.value))}
-          className="w-40 rounded-md border border-neutral-700 px-2 py-1 focus:border-neutral-500 focus:outline-none dark:border-neutral-800 dark:bg-neutral-800 dark:focus:border-neutral-700"
+          max="100"
+          value={shadow}
+          onChange={(e) => setShadow(parseInt(e.target.value))}
         />
-        <span className="text-neutral-500">px</span>
+        <span className="text-neutral-500">{shadow}px</span>
+      </div>
+    </div>
+  );
+};
+
+export const ChangeBgShadowColor = () => {
+  const shadowColor = useBackgroundSettings((state) => state.shadow);
+  const setShadowColor = useBackgroundSettings(
+    (state) => state.updateShadowColor
+  );
+  return (
+    <div className="flex flex-col space-y-1">
+      <label htmlFor="shadowColor">Shadow color:</label>
+      <div className="flex w-full items-center space-x-2">
+        <input
+          id="shadowColor"
+          type="color"
+          value={shadowColor}
+          onChange={(e) => setShadowColor(e.target.value)}
+        />
       </div>
     </div>
   );
