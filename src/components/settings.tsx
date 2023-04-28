@@ -1,8 +1,10 @@
-import { useBackgroundSettings, useImageSettings } from "@/store/settings";
+import { useBackgroundSettings } from "@/store/settings";
 
 export const ChangeBgPadding = () => {
-  const padding = useBackgroundSettings((state) => state.padding);
-  const setPadding = useBackgroundSettings((state) => state.updatePadding);
+  const { padding, setPadding } = useBackgroundSettings((state) => ({
+    padding: state.padding,
+    setPadding: state.updatePadding,
+  }));
   return (
     <div className="flex flex-col space-y-1">
       <label htmlFor="padding">Padding:</label>
@@ -22,8 +24,10 @@ export const ChangeBgPadding = () => {
 };
 
 export const ChangeBgRounded = () => {
-  const rounded = useBackgroundSettings((state) => state.rounded);
-  const setRounded = useBackgroundSettings((state) => state.updateRounded);
+  const { rounded, setRounded } = useBackgroundSettings((state) => ({
+    rounded: state.rounded,
+    setRounded: state.updateRounded,
+  }));
   return (
     <div className="flex flex-col space-y-1">
       <label htmlFor="rounded">Rounded:</label>
@@ -43,8 +47,10 @@ export const ChangeBgRounded = () => {
 };
 
 export const ChangeBgShadow = () => {
-  const shadow = useBackgroundSettings((state) => state.shadow);
-  const setShadow = useBackgroundSettings((state) => state.updateShadow);
+  const { shadow, setShadow } = useBackgroundSettings((state) => ({
+    shadow: state.shadow,
+    setShadow: state.updateShadow,
+  }));
   return (
     <div className="flex flex-col space-y-1">
       <label htmlFor="shadow">Shadow:</label>
@@ -64,10 +70,10 @@ export const ChangeBgShadow = () => {
 };
 
 export const ChangeBgShadowColor = () => {
-  const shadowColor = useBackgroundSettings((state) => state.shadow);
-  const setShadowColor = useBackgroundSettings(
-    (state) => state.updateShadowColor
-  );
+  const { shadowColor, setShadowColor } = useBackgroundSettings((state) => ({
+    shadowColor: state.shadowColor,
+    setShadowColor: state.updateShadowColor,
+  }));
   return (
     <div className="flex flex-col space-y-1">
       <label htmlFor="shadowColor">Shadow color:</label>
