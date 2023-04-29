@@ -12,6 +12,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ["var(--inter-font)", ...fontFamily.sans],
+        code: ["var(--jetBrainsMono-font)", ...fontFamily.mono],
       },
       fontSize: {
         mini: "15px",
@@ -27,12 +28,12 @@ module.exports = {
         },
         spin: {
           from: {
-            transform: "rotate(0deg)"
+            transform: "rotate(0deg)",
           },
           to: {
-            transform: "rotate(360deg)"
-          }
-        }
+            transform: "rotate(360deg)",
+          },
+        },
       },
       animation: {
         animation: "spin 1s linear infinite",
