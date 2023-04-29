@@ -1,3 +1,4 @@
+import Head from "next/head";
 import type { AppProps } from "next/app";
 
 // Styles/UI:
@@ -29,6 +30,11 @@ const jetBrainsMono = localFont({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
+      <Head>
+        <title>frame - Generate images with beautiful gradients.</title>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <link rel="icon" href="/images/logo_svg.svg" />
+      </Head>
       <style jsx global>
         {`
           :root {
