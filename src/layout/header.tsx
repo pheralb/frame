@@ -1,17 +1,20 @@
 import ChangeTheme from "@/components/theme";
 import { ExternalLink } from "@/ui";
 import { GitHub, Twitter, Combine } from "iconoir-react";
+import Link from "next/link";
 
 const iconSize = 20;
 
 const Header = () => {
   return (
-    <div className="fixed top-0 flex w-full items-center justify-between px-6 pt-6 text-neutral-400">
-      <div className="flex items-center space-x-2">
-        <Combine width={iconSize} />
-        <h3 className="font-medium">frame</h3>
-        <span className="text-yellow-700">beta</span>
-      </div>
+    <div className="fixed top-0 z-50 flex w-full items-center justify-between px-6 pt-6 text-neutral-400">
+      <Link href="/">
+        <div className="flex items-center space-x-2">
+          <Combine width={iconSize} />
+          <h3 className="font-medium">frame</h3>
+          <span className="text-yellow-700">beta</span>
+        </div>
+      </Link>
       <div className="flex items-center space-x-5">
         <ExternalLink
           href="https://twitter.com/pheralb_"
