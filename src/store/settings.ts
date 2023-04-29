@@ -4,26 +4,22 @@ import { devtools, persist } from "zustand/middleware";
 interface iBackgroundState {
   padding: number;
   rounded: number;
-  shadow: number;
-  shadowColor: string;
+  gradient: string;
+  updateGradient: (gradient: string) => void;
   updatePadding: (padding: number) => void;
   updateRounded: (rounded: number) => void;
-  updateShadow: (shadow: number) => void;
-  updateShadowColor: (shadowColor: string) => void;
 }
 
 export const useBackgroundSettings = create<iBackgroundState>()(
   devtools(
     persist(
       (set) => ({
-        padding: 0,
-        rounded: 0,
-        shadow: 0,
-        shadowColor: "#000000",
+        padding: 30,
+        rounded: 30,
+        gradient: "bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500",
+        updateGradient: (gradient: string) => set({ gradient }),
         updatePadding: (padding: number) => set({ padding }),
         updateRounded: (rounded: number) => set({ rounded }),
-        updateShadow: (shadow: number) => set({ shadow }),
-        updateShadowColor: (shadowColor: string) => set({ shadowColor }),
       }),
       {
         name: "background-settings-storage",
@@ -32,24 +28,20 @@ export const useBackgroundSettings = create<iBackgroundState>()(
   )
 );
 
-interface iImageState {
-  width: number;
-  height: number;
-  updateWidth: (width: number) => void;
-  updateHeight: (height: number) => void;
+interface iEditorSettings {
+  dots: boolean;
+  activateDots: (activate: boolean) => void;
 }
 
-export const useImageSettings = create<iImageState>()(
+export const useEditorSettings = create<iEditorSettings>()(
   devtools(
     persist(
       (set) => ({
-        width: 0,
-        height: 0,
-        updateWidth: (width: number) => set({ width }),
-        updateHeight: (height: number) => set({ height }),
+        dots: true,
+        activateDots: (dots: boolean) => set({ dots }),
       }),
       {
-        name: "image-settings-storage",
+        name: "editor-settings-storage",
       }
     )
   )
