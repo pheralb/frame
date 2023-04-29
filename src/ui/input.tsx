@@ -1,11 +1,31 @@
-import { cn } from "@/utils";
+import React from "react";
 
-export const inputStyles = cn(
-  "rounded-md border border-neutral-700 px-2 py-1 focus:border-neutral-500 focus:outline-none dark:border-neutral-800 dark:bg-neutral-800 dark:focus:border-neutral-700"
+import { cn } from "@/utils";
+import { cva, type VariantProps } from "class-variance-authority";
+
+// Global styles for input & textarea:
+const inputVariants = cva(
+  "px-4 py-2 rounded-md border border-neutral-700/60 bg-neutral-800/30 focus:outline-none focus:ring-2 focus:ring-opacity-50 focus:ring-neutral-700"
 );
 
-const Input = () => {
-  return <div>Input</div>;
-};
+// Input:
+export interface InputProps
+  extends React.InputHTMLAttributes<HTMLInputElement>,
+    VariantProps<typeof inputVariants> {
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
 
-export default Input;
+const Input = React.forwardRef<HTMLInputElement, InputProps>(
+  ({ className, ...props }, ref) => {
+    return (
+      <input
+        ref={ref}
+        className={cn(inputVariants({ className }))}
+        {...props}
+      />
+    );
+  }
+);
+Input.displayName = "Input";
+
+export { Input, inputVariants };
