@@ -1,4 +1,3 @@
-import ChangeTheme from "@/components/theme";
 import { ExternalLink } from "@/ui";
 import { GitHub, Twitter, Combine } from "iconoir-react";
 import Link from "next/link";
@@ -18,17 +17,16 @@ const Header = () => {
       <div className="flex items-center space-x-5">
         <ExternalLink
           href="https://twitter.com/pheralb_"
-          className="text-neutral-900 transition-colors duration-100 hover:text-blue-500 dark:text-neutral-400 dark:hover:text-blue-400"
+          className="transition-colors duration-100 hover:text-blue-500"
         >
           <Twitter width={iconSize} />
         </ExternalLink>
         <ExternalLink
           href="https://github.com/pheralb/screenshot"
-          className="text-neutral-900 transition-colors duration-100 hover:text-neutral-600 dark:text-neutral-400 dark:hover:text-white"
+          className="text-neutral-400 transition-colors duration-100 hover:text-neutral-200"
         >
           <GitHub width={iconSize} />
         </ExternalLink>
-        <ChangeTheme />
       </div>
     </div>
   );

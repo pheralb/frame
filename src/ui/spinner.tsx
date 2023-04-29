@@ -8,7 +8,7 @@ const Spinner = (props: SpinnerProps) => {
     <svg
       aria-hidden="true"
       role="status"
-      className="animate-spin text-gray-200 dark:text-gray-600"
+      className="animate-spin text-gray-600"
       style={{ height: props.size, width: props.size }}
       viewBox="0 0 100 101"
       fill="none"
