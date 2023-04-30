@@ -1,8 +1,8 @@
 <div align="center">
 
-<!-- <a href="https://myframe.vercel.app" target="_blank">
-<img src="public/images/github_readme.png" alt="Screenshot" />
-</a> -->
+<a href="https://myframe.vercel.app" target="_blank">
+<img src="public/images/og_image.png" alt="Screenshot" />
+</a>
 
 </p>
 
