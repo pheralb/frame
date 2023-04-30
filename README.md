@@ -15,7 +15,7 @@
         Getting Started
     </a>
     <span>&nbsp;●&nbsp;</span>
-    <a href="#-stack">
+    <a href="#%EF%B8%8F-stack">
         Stack
     </a>
     <span>&nbsp;●&nbsp;</span>
@@ -45,6 +45,10 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - [**react-resizable**](https://github.com/react-grid-layout/react-resizable) - A simple React component that is resizable with a handle.
 - [**Iconoir** icons](https://iconoir.com/) - An open-source library with 1300+ unique SVG icons, designed on a 24x24 pixels grid.
 - [**Zustand**](https://zustand-demo.pmnd.rs/) - A small, fast and scalable bearbones state-management solution using simplified flux principles.
+
+## 🗒️ Roadmap
+
+- [x] Select
 
 ## 🚀 Getting Started
 
