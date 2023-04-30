@@ -40,7 +40,7 @@ const Dropzone: FunctionComponent<{ setFile: Dispatch<File> }> = ({
           {isDragAccept || isDragReject ? (
             <p>{isDragAccept ? "Ready?" : "Only images are allowed"}</p>
           ) : (
-            <p>Drag & drop some files here, or click here</p>
+            <p>Drop your image here or click here</p>
           )}
         </div>
         <div className="fixed bottom-0 flex items-center space-x-2 pb-4 text-neutral-500">
