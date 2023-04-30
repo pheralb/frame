@@ -43,8 +43,6 @@ export default function Home() {
     borderRadius: `${rounded}px`,
   };
 
-  // Editor settings:
-
   // Download image:
   const handleDownload = () => {
     exportAsImage(getImage.current as HTMLDivElement, name);
@@ -86,6 +84,7 @@ export default function Home() {
                     className="mt-1 w-full"
                     value={name}
                     onChange={(e) => setName(e.target.value as string)}
+                    placeholder="My image"
                   />
                 </Dialog>
               </div>
@@ -131,16 +130,10 @@ export default function Home() {
                 </TabsContent>
               </Tabs>
             </SidebarSection>
-            <SidebarSection title="Background" border={true}>
+            <SidebarSection title="Background" border={false}>
               <div className="flex flex-col space-y-3">
                 <ChangeBgPadding />
                 <ChangeBgRounded />
-              </div>
-            </SidebarSection>
-            <SidebarSection title="Editor" border={false}>
-              <div className="flex items-center space-x-2">
-                <input type="checkbox" id="dots" onChange={() => {}} />
-                <label htmlFor="dots">Dots</label>
               </div>
             </SidebarSection>
           </Sidebar>
