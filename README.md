@@ -46,9 +46,12 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - [**Iconoir** icons](https://iconoir.com/) - An open-source library with 1300+ unique SVG icons, designed on a 24x24 pixels grid.
 - [**Zustand**](https://zustand-demo.pmnd.rs/) - A small, fast and scalable bearbones state-management solution using simplified flux principles.
 
-## 🗒️ Roadmap
+## 🤔 Issues/roadmap
 
-- [x] Select
+- [ ] Resolve image resizing.
+- [ ] Improve responsive.
+- [ ] Allow downloading in more file types.
+- [ ] Upgrade to Next.js 13 /app directory.
 
 ## 🚀 Getting Started
 
