@@ -81,14 +81,12 @@ export default function Home() {
                     </Button>
                   }
                 >
-                  <form onSubmit={handleDownload}>
-                    <label className="text-sm font-medium">File name:</label>
-                    <Input
-                      className="mt-1 w-full"
-                      value={name}
-                      onChange={(e) => setName(e.target.value as string)}
-                    />
-                  </form>
+                  <label className="text-sm font-medium">File name:</label>
+                  <Input
+                    className="mt-1 w-full"
+                    value={name}
+                    onChange={(e) => setName(e.target.value as string)}
+                  />
                 </Dialog>
               </div>
             </SidebarSection>
@@ -148,8 +146,8 @@ export default function Home() {
           </Sidebar>
           <div className="m-3 ml-64 flex flex-col">
             <div className="border-2 border-dashed border-neutral-700">
-              <div ref={getImage}>
-                <Resizable>
+              <div ref={getImage} className="bg-transparent">
+                <Resizable className="bg-transparent">
                   <div style={divStyle} className={cn(gradient)}>
                     <img
                       src={URL.createObjectURL(image)}
