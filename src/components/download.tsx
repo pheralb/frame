@@ -43,7 +43,7 @@ const DownloadImage = (props: DownloadProps) => {
     >
       <div className="mb-3">
         <label htmlFor="filename" className="text-sm font-medium">
-          File name:
+          Name:
         </label>
         <Input
           id="filename"
@@ -53,14 +53,14 @@ const DownloadImage = (props: DownloadProps) => {
           placeholder="My image"
         />
       </div>
-      <label htmlFor="filetype" className="text-sm font-medium">
-        File type:
+      <label htmlFor="fileformat" className="text-sm font-medium">
+        Image format:
       </label>
-      <Select onValueChange={setFiletype}>
+      <Select onValueChange={setFiletype} defaultValue="image/png">
         <SelectTrigger className="mt-1 w-full">
           <SelectValue placeholder="File type" />
         </SelectTrigger>
-        <SelectContent id="filetype">
+        <SelectContent id="fileformat">
           <SelectItem value="image/png" defaultChecked>
             .png
           </SelectItem>
