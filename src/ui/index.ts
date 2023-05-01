@@ -18,3 +18,12 @@ export { Input } from "./input";
 
 // Textarea:
 export { TextArea } from "./textarea";
+
+// Select:
+export {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "./select";
