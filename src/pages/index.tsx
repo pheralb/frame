@@ -41,6 +41,8 @@ export default function Home() {
   const divStyle = {
     padding: `${padding}px`,
     borderRadius: `${rounded}px`,
+    width: "100%",
+    height: "100%",
   };
 
   return (
@@ -114,7 +116,7 @@ export default function Home() {
             <div className="border-2 border-dashed border-neutral-700">
               <div ref={getImage} className="bg-transparent">
                 <Resizable className="bg-transparent">
-                  <div style={divStyle} className={cn(gradient)}>
+                  <div className={cn(gradient)} style={divStyle}>
                     <img
                       src={URL.createObjectURL(image)}
                       alt="image"
