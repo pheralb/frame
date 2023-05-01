@@ -40,7 +40,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 - [**Next.js** + **Typescript**](https://nextjs.org/) - The React Framework for the Web.
 - [**Tailwind CSS** + **Tailwind-Merge** + **clsx**](https://tailwindcss.com/) - A utility-first CSS framework for rapid UI development.
-- [**Class Variance Authority** + **Radix-UI** primitives](https://www.radix-ui.com/) - Unstyled, accessible components for building high‑quality design systems and web apps.
+- [**Class Variance Authority** + **Radix-UI** primitives & **shadcn/ui** components](https://ui.shadcn.com/) - Beautifully designed components that you can copy and paste into your apps.
 - [**react-dropzone**](https://react-dropzone.js.org/) - Simple React hook to create a HTML5-compliant drag'n'drop zone for files.
 - [**react-resizable**](https://github.com/react-grid-layout/react-resizable) - A simple React component that is resizable with a handle.
 - [**Iconoir** icons](https://iconoir.com/) - An open-source library with 1300+ unique SVG icons, designed on a 24x24 pixels grid.
