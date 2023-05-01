@@ -27,3 +27,6 @@ export {
   SelectTrigger,
   SelectValue,
 } from "./select";
+
+// Slider:
+export { Slider } from "./slider";
