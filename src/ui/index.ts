@@ -2,7 +2,14 @@
 export { Button } from "./button";
 
 // Dialog:
-export { default as Dialog } from "./dialog";
+export {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "./dialog";
 
 // Link:
 export { ExternalLink } from "./link";
