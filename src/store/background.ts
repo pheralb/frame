@@ -27,22 +27,3 @@ export const useBackgroundSettings = create<iBackgroundState>()(
     )
   )
 );
-
-interface iEditorSettings {
-  dots: boolean;
-  activateDots: (activate: boolean) => void;
-}
-
-export const useEditorSettings = create<iEditorSettings>()(
-  devtools(
-    persist(
-      (set) => ({
-        dots: true,
-        activateDots: (dots: boolean) => set({ dots }),
-      }),
-      {
-        name: "editor-settings-storage",
-      }
-    )
-  )
-);
