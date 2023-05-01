@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { useHotkeys } from "react-hotkeys-hook";
 import { Resizable } from "re-resizable";
 import { cn } from "@/utils";
 import { AddMediaImage } from "iconoir-react";
@@ -29,6 +30,15 @@ import DownloadImage from "@/components/download";
 export default function Home() {
   const [image, setImage] = useState<File | null>(null);
   const getImage = useRef<HTMLDivElement>(null);
+
+  // Shortcuts:
+  useHotkeys(
+    "ctrl+a",
+    () => {
+      setImage(null);
+    },
+    { preventDefault: true }
+  );
 
   // Background settings:
   const { padding, bgRounded, gradient, updateGradient } =
