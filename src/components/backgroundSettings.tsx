@@ -1,4 +1,4 @@
-import { useBackgroundSettings } from "@/store/settings";
+import { useBackgroundSettings } from "@/store/background";
 import { Slider } from "@/ui";
 
 export const ChangeBgPadding = () => {
