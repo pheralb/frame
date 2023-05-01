@@ -16,7 +16,10 @@ import {
 
 import Dropzone from "@/components/dropzone";
 import { Sidebar, SidebarSection } from "@/components/sidebar";
-import { ChangeBgPadding, ChangeBgRounded } from "@/components/settings";
+import {
+  ChangeBgPadding,
+  ChangeBgRounded,
+} from "@/components/backgroundSettings";
 import DownloadImage from "@/components/download";
 
 import { useBackgroundSettings } from "@/store/settings";
