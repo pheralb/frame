@@ -1,4 +1,5 @@
 import { useBackgroundSettings } from "@/store/settings";
+import { Slider } from "@/ui";
 
 export const ChangeBgPadding = () => {
   const { padding, setPadding } = useBackgroundSettings((state) => ({
@@ -9,13 +10,12 @@ export const ChangeBgPadding = () => {
     <div className="flex flex-col space-y-1">
       <label htmlFor="padding">Padding:</label>
       <div className="flex w-full items-center space-x-2">
-        <input
+        <Slider
           id="padding"
-          type="range"
-          min="0"
-          max="100"
-          value={padding}
-          onChange={(e) => setPadding(parseInt(e.target.value))}
+          defaultValue={[padding]}
+          onValueChange={(e) => setPadding(e[0])}
+          step={1}
+          max={100}
         />
         <span className="text-neutral-500">{padding}px</span>
       </div>
@@ -32,13 +32,12 @@ export const ChangeBgRounded = () => {
     <div className="flex flex-col space-y-1">
       <label htmlFor="rounded">Rounded:</label>
       <div className="flex w-full items-center space-x-2">
-        <input
+        <Slider
           id="rounded"
-          type="range"
-          min="0"
-          max="100"
-          value={rounded}
-          onChange={(e) => setRounded(parseInt(e.target.value))}
+          defaultValue={[rounded]}
+          onValueChange={(e) => setRounded(e[0])}
+          step={1}
+          max={100}
         />
         <span className="text-neutral-500">{rounded}px</span>
       </div>
