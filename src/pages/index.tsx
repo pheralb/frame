@@ -3,6 +3,9 @@ import { Resizable } from "re-resizable";
 import { cn } from "@/utils";
 import { AddMediaImage } from "iconoir-react";
 
+import { useBackgroundSettings } from "@/store/background";
+import { useImageSettings } from "@/store/image";
+
 import { gradients } from "@/gradients";
 import {
   Button,
@@ -20,29 +23,35 @@ import {
   ChangeBgPadding,
   ChangeBgRounded,
 } from "@/components/backgroundSettings";
+import { ChangeImgRounded } from "@/components/imageSettings";
 import DownloadImage from "@/components/download";
-
-import { useBackgroundSettings } from "@/store/settings";
 
 export default function Home() {
   const [image, setImage] = useState<File | null>(null);
   const getImage = useRef<HTMLDivElement>(null);
 
   // Background settings:
-  const { padding, rounded, gradient, updateGradient } = useBackgroundSettings(
-    (state) => ({
+  const { padding, bgRounded, gradient, updateGradient } =
+    useBackgroundSettings((state) => ({
       padding: state.padding,
-      rounded: state.rounded,
+      bgRounded: state.rounded,
       gradient: state.gradient,
       updateGradient: state.updateGradient,
-    })
-  );
+    }));
 
-  const divStyle = {
+  const { imgRounded } = useImageSettings((state) => ({
+    imgRounded: state.rounded,
+  }));
+
+  const backgroundStyle = {
     padding: `${padding}px`,
-    borderRadius: `${rounded}px`,
+    borderRadius: `${bgRounded}px`,
     width: "100%",
     height: "100%",
+  };
+
+  const imageStyle = {
+    borderRadius: `${imgRounded}px`,
   };
 
   return (
@@ -105,10 +114,15 @@ export default function Home() {
                 </TabsContent>
               </Tabs>
             </SidebarSection>
-            <SidebarSection title="Background" border={false}>
+            <SidebarSection title="Background" border={true}>
               <div className="flex flex-col space-y-3">
                 <ChangeBgPadding />
                 <ChangeBgRounded />
+              </div>
+            </SidebarSection>
+            <SidebarSection title="Image" border={false}>
+              <div className="flex flex-col space-y-3">
+                <ChangeImgRounded />
               </div>
             </SidebarSection>
           </Sidebar>
@@ -116,8 +130,9 @@ export default function Home() {
             <div className="border-2 border-dashed border-neutral-700">
               <div ref={getImage} className="bg-transparent">
                 <Resizable className="bg-transparent">
-                  <div className={cn(gradient)} style={divStyle}>
+                  <div className={cn(gradient)} style={backgroundStyle}>
                     <img
+                      style={imageStyle}
                       src={URL.createObjectURL(image)}
                       alt="image"
                       className="h-full w-full object-cover"
