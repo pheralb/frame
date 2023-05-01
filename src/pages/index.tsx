@@ -1,14 +1,11 @@
 import { useRef, useState } from "react";
 import { Resizable } from "re-resizable";
-import { cn, exportAsImage } from "@/utils";
-import { toast } from "sonner";
-import { AddMediaImage, Download } from "iconoir-react";
+import { cn } from "@/utils";
+import { AddMediaImage } from "iconoir-react";
 
 import { gradients } from "@/gradients";
 import {
-  Input,
   Button,
-  Dialog,
   Tabs,
   TabsContent,
   TabsList,
@@ -20,11 +17,11 @@ import {
 import Dropzone from "@/components/dropzone";
 import { Sidebar, SidebarSection } from "@/components/sidebar";
 import { ChangeBgPadding, ChangeBgRounded } from "@/components/settings";
+import DownloadImage from "@/components/download";
 
 import { useBackgroundSettings } from "@/store/settings";
 
 export default function Home() {
-  const [name, setName] = useState<string>("My image");
   const [image, setImage] = useState<File | null>(null);
   const getImage = useRef<HTMLDivElement>(null);
 
@@ -43,12 +40,6 @@ export default function Home() {
     borderRadius: `${rounded}px`,
   };
 
-  // Download image:
-  const handleDownload = () => {
-    exportAsImage(getImage.current as HTMLDivElement, name);
-    toast("Downloading image...");
-  };
-
   return (
     <div className="flex min-h-screen flex-col items-center justify-center">
       {!image ? (
@@ -65,28 +56,7 @@ export default function Home() {
                 >
                   New image
                 </Button>
-                <Dialog
-                  title="Export image"
-                  btnIcon={<Download width={18} stroke="1" />}
-                  btnText="Export image"
-                  action={
-                    <Button
-                      icon={<Download width={18} stroke="1" />}
-                      onClick={() => handleDownload()}
-                      className="w-full"
-                    >
-                      Download
-                    </Button>
-                  }
-                >
-                  <label className="text-sm font-medium">File name:</label>
-                  <Input
-                    className="mt-1 w-full"
-                    value={name}
-                    onChange={(e) => setName(e.target.value as string)}
-                    placeholder="My image"
-                  />
-                </Dialog>
+                <DownloadImage image={getImage} />
               </div>
             </SidebarSection>
             <SidebarSection title="Gradients" border={true}>
