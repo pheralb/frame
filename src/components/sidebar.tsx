@@ -24,12 +24,14 @@ export const SidebarSection = (props: SidebarSectionProps) => {
     <div
       className={cn(
         "flex flex-col pb-3",
-        props.border && "border-b-2 border-neutral-800"
+        props.border && "border-b-2 border-neutral-400 dark:border-neutral-800"
       )}
     >
       {props.title && (
         <div className="mb-4 mt-4">
-          <span className="text-neutral-500">{props.title}</span>
+          <span className="text-neutral-600 dark:text-neutral-500">
+            {props.title}
+          </span>
         </div>
       )}
       {props.children}

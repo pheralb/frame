@@ -14,7 +14,7 @@ const SelectTrigger = React.forwardRef<
   <SelectPrimitive.Trigger
     ref={ref}
     className={cn(
-      "border-input ring-offset-background placeholder:text-muted-foreground focus:ring-ring flex h-10 w-full items-center justify-between rounded-md border border-neutral-700 bg-neutral-800/30 px-3 py-2 text-sm ring-neutral-700 focus:outline-none focus:ring-2 disabled:cursor-not-allowed disabled:opacity-50",
+      "border-input ring-offset-background placeholder:text-muted-foreground focus:ring-ring flex h-10 w-full items-center justify-between rounded-md border border-neutral-400 bg-neutral-300 px-3 py-2 text-sm ring-neutral-700 focus:outline-none focus:ring-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-700/60 dark:bg-neutral-800/30",
       className
     )}
     {...props}
@@ -35,7 +35,7 @@ const SelectContent = React.forwardRef<
     <SelectPrimitive.Content
       ref={ref}
       className={cn(
-        "text-popover-foreground relative z-50 min-w-[8rem] overflow-hidden rounded-md bg-neutral-800 shadow-md animate-in fade-in-80",
+        "text-popover-foreground focus:ring-ring relative z-50 min-w-[8rem] overflow-hidden rounded-md bg-neutral-300 shadow-md animate-in fade-in-80 focus:outline-none focus:ring-2 dark:bg-neutral-800",
         position === "popper" && "translate-y-1",
         className
       )}
@@ -75,14 +75,14 @@ const SelectItem = React.forwardRef<
   <SelectPrimitive.Item
     ref={ref}
     className={cn(
-      "focus:bg-accent focus:text-accent-foreground relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      "relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
       className
     )}
     {...props}
   >
     <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
       <SelectPrimitive.ItemIndicator>
-        <Check className="h-4 w-4" />
+        <Check className="h-5 w-5" />
       </SelectPrimitive.ItemIndicator>
     </span>
 

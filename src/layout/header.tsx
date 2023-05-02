@@ -4,10 +4,12 @@ import { GitHub, Twitter, Combine } from "iconoir-react";
 import Link from "next/link";
 
 const iconSize = 20;
+const className =
+  "text-dark transition-colors duration-100 hover:text-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-200";
 
 const Header = () => {
   return (
-    <div className="fixed top-0 z-10 flex w-full items-center justify-between px-6 pt-6 text-neutral-400">
+    <div className="fixed top-0 z-10 flex w-full items-center justify-between px-6 pt-6 text-dark dark:text-neutral-400">
       <Link href="/">
         <div className="flex items-center space-x-2">
           <Combine width={iconSize} />
@@ -17,15 +19,12 @@ const Header = () => {
       </Link>
       <div className="flex items-center space-x-5">
         <SettingsDialog />
-        <ExternalLink
-          href="https://twitter.com/pheralb_"
-          className="transition-colors duration-100 hover:text-blue-500"
-        >
+        <ExternalLink href="https://twitter.com/pheralb_" className={className}>
           <Twitter width={iconSize} />
         </ExternalLink>
         <ExternalLink
           href="https://github.com/pheralb/screenshot"
-          className="text-neutral-400 transition-colors duration-100 hover:text-neutral-200"
+          className={className}
         >
           <GitHub width={iconSize} />
         </ExternalLink>

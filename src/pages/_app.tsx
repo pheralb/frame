@@ -5,6 +5,7 @@ import type { AppProps } from "next/app";
 import "@/styles/globals.css";
 import { cn } from "@/utils/cn";
 import { Toaster } from "sonner";
+import { ThemeProvider, useTheme } from "next-themes";
 
 // Layout:
 import Header from "@/layout/header";
@@ -28,6 +29,7 @@ const jetBrainsMono = localFont({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
+  const { theme } = useTheme();
   return (
     <>
       <Head>
@@ -43,25 +45,28 @@ export default function App({ Component, pageProps }: AppProps) {
           }
         `}
       </style>
-      <main
-        className={cn(
-          `${InterFont.variable} h-screen w-screen font-sans text-sm`
-        )}
-      >
-        <Header />
-        <Component {...pageProps} />
-        <Toaster
-          position="bottom-right"
-          toastOptions={{
-            style: {
-              background: "#171717",
-              color: "#fff",
-              border: "1px solid #262626",
-            },
-            className: "font-sans",
-          }}
-        />
-      </main>
+      <ThemeProvider enableSystem={true} attribute="class">
+        <main
+          className={cn(
+            `${InterFont.variable} h-screen w-screen font-sans text-sm`
+          )}
+        >
+          <Header />
+          <Component {...pageProps} />
+          <Toaster
+            position="bottom-right"
+            toastOptions={{
+              style: {
+                background: theme === "dark" ? "#171717" : "#E6E6E6",
+                color: theme === "dark" ? "#E6E6E6" : "#171717",
+                border:
+                  theme === "dark" ? "1px solid #E6E6E6" : "1px solid #171717",
+              },
+              className: "font-sans",
+            }}
+          />
+        </main>
+      </ThemeProvider>
     </>
   );
 }
