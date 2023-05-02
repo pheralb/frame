@@ -21,7 +21,8 @@ const exportAsImage = async (
           imageData.data[i + 1] === 255 &&
           imageData.data[i + 2] === 255
         ) {
-          imageData.data[i + 3] = 0;
+          // Set alpha channel to maximum value (255) for white pixels
+          imageData.data[i + 3] = 255;
         }
       }
       ctx.putImageData(imageData, 0, 0);
