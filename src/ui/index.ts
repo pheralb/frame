@@ -8,6 +8,7 @@ export {
   DialogDescription,
   DialogHeader,
   DialogTitle,
+  DialogClose,
   DialogTrigger,
 } from "./dialog";
 

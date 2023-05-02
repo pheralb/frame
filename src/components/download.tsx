@@ -6,6 +6,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogClose,
   Input,
   Select,
   SelectContent,
@@ -17,7 +18,6 @@ import { Download } from "iconoir-react";
 import { exportAsImage } from "@/utils";
 import { toast } from "sonner";
 import { useHotkeys } from "react-hotkeys-hook";
-import { DialogClose } from "@/ui/dialog";
 
 interface DownloadProps {
   image: React.RefObject<HTMLDivElement>;
