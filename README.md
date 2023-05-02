@@ -49,8 +49,10 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - [**html2canvas**](https://html2canvas.hertzen.com/) - Screenshots with JavaScript.
 - [**Zustand**](https://zustand-demo.pmnd.rs/) - A small, fast and scalable bearbones state-management solution using simplified flux principles.
 
-## 🤔 Issues/roadmap
+## 🤔 Known issues/roadmap
 
+- [ ] Export images - fix white background.
+- [ ] Create modal to display user preferences.
 - [x] Resolve image resizing.
 - [ ] Improve responsive.
 - [x] Allow downloading in more file types.
