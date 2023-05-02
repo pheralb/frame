@@ -35,8 +35,8 @@ const Dropzone: FunctionComponent<{ setFile: Dispatch<File> }> = ({
     >
       <input {...getInputProps()} />
       <div className="flex h-full w-full cursor-default flex-col items-center justify-center space-y-3">
-        <div className="flex items-center space-x-2">
-          <AddMediaImage width={18} stroke="1" />
+        <div className="flex flex-col items-center space-y-4 text-xl">
+          <AddMediaImage height={50} width={50} stroke="1" />
           {isDragAccept || isDragReject ? (
             <p>{isDragAccept ? "Ready?" : "Only images are allowed"}</p>
           ) : (
