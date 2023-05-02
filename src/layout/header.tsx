@@ -1,3 +1,4 @@
+import SettingsDialog from "@/components/settings";
 import { ExternalLink } from "@/ui";
 import { GitHub, Twitter, Combine } from "iconoir-react";
 import Link from "next/link";
@@ -15,6 +16,7 @@ const Header = () => {
         </div>
       </Link>
       <div className="flex items-center space-x-5">
+        <SettingsDialog />
         <ExternalLink
           href="https://twitter.com/pheralb_"
           className="transition-colors duration-100 hover:text-blue-500"
