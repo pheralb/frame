@@ -6,7 +6,7 @@ const exportAsImage = async (
   imageFileName: string,
   imageFileType?: string
 ) => {
-  await html2canvas(element).then((canvas) => {
+  await html2canvas(element, { backgroundColor: null }).then((canvas) => {
     const tempCanvas = document.createElement("canvas");
     const ctx = tempCanvas.getContext("2d");
 
