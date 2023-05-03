@@ -51,8 +51,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## 🤔 Known issues/roadmap
 
-- [ ] Export images - fix white background.
-- [ ] Create modal to display user preferences.
+- [x] Export images - fix white background.
+- [x] Create modal to display user preferences.
 - [x] Resolve image resizing.
 - [ ] Improve responsive.
 - [x] Allow downloading in more file types.
