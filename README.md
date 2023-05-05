@@ -38,7 +38,7 @@
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app):
 
-- [**Next.js** + **Typescript**](https://nextjs.org/) - The React Framework for the Web.
+- [**Next.js 13 /app directory** + **Typescript**](https://nextjs.org/) - The React Framework for the Web.
 - [**Tailwind CSS** + **Tailwind-Merge** + **clsx**](https://tailwindcss.com/) - A utility-first CSS framework for rapid UI development.
 - [**Class Variance Authority** + **Radix-UI** primitives & **shadcn/ui** components](https://ui.shadcn.com/) - Beautifully designed components that you can copy and paste into your apps.
 - [**Iconoir** icons](https://iconoir.com/) - An open-source library with 1300+ unique SVG icons, designed on a 24x24 pixels grid.
@@ -56,7 +56,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - [x] Resolve image resizing.
 - [ ] Improve responsive.
 - [x] Allow downloading in more file types.
-- [ ] Upgrade to Next.js 13 /app directory.
+- [x] Upgrade to Next.js 13 /app directory.
 
 ## 🚀 Getting Started
 
