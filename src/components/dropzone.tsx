@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import { Dispatch, FunctionComponent, useCallback } from "react";
 
