@@ -1,3 +1,5 @@
+"use client";
+
 import { useBackgroundSettings } from "@/store/background";
 import { Slider } from "@/ui";
 

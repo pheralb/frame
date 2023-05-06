@@ -1,3 +1,5 @@
+"use client";
+
 import { useImageSettings } from "@/store/image";
 import { Slider } from "@/ui";
 

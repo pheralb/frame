@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/utils";
 import { ArrowTr } from "iconoir-react";
 import type { ReactNode } from "react";
