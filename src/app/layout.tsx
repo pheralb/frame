@@ -5,10 +5,13 @@ import { cn } from "@/utils/cn";
 // Layout:
 import Header from "@/layout/header";
 
+// Providers:
+import { ThemeProvider } from "@/providers/theme";
+import OtherProviders from "@/providers/others";
+
 // Fonts:
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
-import { Providers } from "@/providers";
 const InterFont = Inter({
   subsets: ["latin"],
   variable: "--inter-font",
@@ -42,16 +45,12 @@ export default function RootLayout({
           `${InterFont.variable} h-screen w-screen bg-light font-sans text-mini text-sm text-dark antialiased dark:bg-dark dark:text-white`
         )}
       >
-        <style jsx global>
-          {`
-            :root {
-              --inter-font: ${InterFont.style.fontFamily};
-              --jetBrainsMono-font: ${jetBrainsMono.style.fontFamily};
-            }
-          `}
-        </style>
-        <Header />
-        <Providers>{children}</Providers>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <OtherProviders>
+            <Header />
+            <main>{children}</main>
+          </OtherProviders>
+        </ThemeProvider>
       </body>
     </html>
   );
