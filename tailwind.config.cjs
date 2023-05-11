@@ -9,6 +9,7 @@ module.exports = {
       colors: {
         light: "#E6E6E6",
         dark: "#161616",
+        logo: "#ebcbe9",
       },
       fontFamily: {
         sans: ["var(--inter-font)", ...fontFamily.sans],

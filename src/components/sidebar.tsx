@@ -1,5 +1,3 @@
-"use client";
-
 import type { ReactNode } from "react";
 import { cn } from "@/utils";
 
@@ -30,7 +28,7 @@ export const SidebarSection = (props: SidebarSectionProps) => {
       )}
     >
       {props.title && (
-        <div className="mb-4 mt-4">
+        <div className="mb-3 mt-4">
           <span className="text-neutral-600 dark:text-neutral-500">
             {props.title}
           </span>

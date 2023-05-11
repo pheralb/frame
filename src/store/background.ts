@@ -16,7 +16,7 @@ export const useBackgroundSettings = create<iBackgroundState>()(
       (set) => ({
         padding: 30,
         rounded: 30,
-        gradient: "bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500",
+        gradient: "",
         updateGradient: (gradient: string) => set({ gradient }),
         updatePadding: (padding: number) => set({ padding }),
         updateRounded: (rounded: number) => set({ rounded }),

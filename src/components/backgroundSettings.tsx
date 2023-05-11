@@ -3,6 +3,28 @@
 import { useBackgroundSettings } from "@/store/background";
 import { Slider } from "@/ui";
 
+import { gradients } from "@/gradients";
+import GradientBtn from "./gradientBtn";
+
+export const ChangeBgGradient = () => {
+  const { gradient, updateGradient } = useBackgroundSettings((state) => ({
+    gradient: state.gradient,
+    updateGradient: state.updateGradient,
+  }));
+  return (
+    <div className="grid grid-cols-3 gap-2">
+      {gradients.map((gradientColor) => (
+        <GradientBtn
+          key={gradientColor}
+          gradient={gradientColor}
+          onClick={() => updateGradient(gradientColor)}
+          selected={gradient === gradientColor}
+        />
+      ))}
+    </div>
+  );
+};
+
 export const ChangeBgPadding = () => {
   const { padding, setPadding } = useBackgroundSettings((state) => ({
     padding: state.padding,
