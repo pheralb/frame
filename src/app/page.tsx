@@ -9,7 +9,6 @@ import { AddMediaImage } from "iconoir-react";
 import { useBackgroundSettings } from "@/store/background";
 import { useImageSettings } from "@/store/image";
 
-import { gradients } from "@/gradients";
 import {
   Button,
   Tabs,
@@ -20,12 +19,13 @@ import {
   ExternalLink,
 } from "@/ui";
 
-import Dropzone from "@/components/dropzone";
-import { Sidebar, SidebarSection } from "@/components/sidebar";
 import {
+  ChangeBgGradient,
   ChangeBgPadding,
   ChangeBgRounded,
 } from "@/components/backgroundSettings";
+import Dropzone from "@/components/dropzone";
+import { Sidebar, SidebarSection } from "@/components/sidebar";
 import { ChangeImgRounded } from "@/components/imageSettings";
 import DownloadImage from "@/components/download";
 
@@ -92,19 +92,7 @@ export default function Home() {
                   <TabsTrigger value="code">Code</TabsTrigger>
                 </TabsList>
                 <TabsContent value="gallery">
-                  <div className="flex flex-wrap items-center justify-center">
-                    {gradients.map((gradientColor) => (
-                      <button
-                        key={gradientColor}
-                        onClick={() => updateGradient(gradientColor)}
-                        className={cn(
-                          "m-1 rounded-xl p-4 transition-all duration-150 hover:-translate-y-[1.25px]",
-                          gradientColor,
-                          gradient === gradientColor && "ring-2 ring-yellow-800"
-                        )}
-                      />
-                    ))}
-                  </div>
+                  <ChangeBgGradient />
                 </TabsContent>
                 <TabsContent value="code">
                   <TextArea
