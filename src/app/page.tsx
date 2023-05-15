@@ -86,33 +86,7 @@ export default function Home() {
               </div>
             </SidebarSection>
             <SidebarSection title="Gradients" border={true}>
-              <Tabs defaultValue="gallery" className="w-full">
-                <TabsList>
-                  <TabsTrigger value="gallery">Gallery</TabsTrigger>
-                  <TabsTrigger value="code">Code</TabsTrigger>
-                </TabsList>
-                <TabsContent value="gallery">
-                  <ChangeBgGradient />
-                </TabsContent>
-                <TabsContent value="code">
-                  <TextArea
-                    className="mb-1 h-28 font-code"
-                    placeholder="Paste your gradient here..."
-                    value={gradient}
-                    onChange={(e) => updateGradient(e.target.value)}
-                  />
-                  <p className="text-neutral-400">
-                    We are using Tailwind CSS to generate the gradients.{" "}
-                    <ExternalLink
-                      href="https://tailwindcss.com/docs/gradient-color-stops"
-                      underline={true}
-                      arrow={true}
-                    >
-                      Learn more
-                    </ExternalLink>
-                  </p>
-                </TabsContent>
-              </Tabs>
+              <ChangeBgGradient />
             </SidebarSection>
             <SidebarSection title="Background" border={true}>
               <div className="flex flex-col space-y-3">
@@ -127,7 +101,7 @@ export default function Home() {
             </SidebarSection>
           </Sidebar>
           <div className="m-3 ml-64 flex flex-col">
-            <div className="border-2 border-dashed border-neutral-700">
+            <div className="border-2 border-dashed border-neutral-400 dark:border-neutral-700">
               <div ref={getImage} className="bg-transparent">
                 <Resizable className="bg-transparent">
                   <div className={cn(gradient)} style={backgroundStyle}>
