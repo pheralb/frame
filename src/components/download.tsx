@@ -16,7 +16,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/ui";
-import { Download } from "iconoir-react";
+import { Download, ArrowDown } from "iconoir-react";
 import { exportAsImage } from "@/utils";
 import { toast } from "sonner";
 import { useHotkeys } from "react-hotkeys-hook";
@@ -32,7 +32,9 @@ const DownloadImage = (props: DownloadProps) => {
 
   const handleDownload = () => {
     exportAsImage(props.image.current as HTMLDivElement, name, filetype);
-    toast("Downloading image...");
+    toast("Downloading image...", {
+      icon: <ArrowDown height={16} />,
+    });
   };
 
   // Shortcuts:

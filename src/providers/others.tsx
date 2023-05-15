@@ -17,9 +17,8 @@ const OtherProviders = (props: OtherProviderProps) => {
         toastOptions={{
           style: {
             background: theme === "dark" ? "#171717" : "#E6E6E6",
+            border: "1px solid #262626",
             color: theme === "dark" ? "#E6E6E6" : "#171717",
-            border:
-              theme === "dark" ? "1px solid #E6E6E6" : "1px solid #171717",
           },
           className: "font-sans",
         }}
