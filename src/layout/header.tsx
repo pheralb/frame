@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <div className="fixed top-0 z-10 flex w-full items-center justify-between px-6 pt-6 text-dark dark:text-neutral-400">
       <Link href="/">
-        <div className="flex items-center space-x-2 dark:text-logo">
+        <div className="flex items-center space-x-2">
           <Logo width={iconSize} />
           <h3 className="font-medium">frame</h3>
           <span className="text-yellow-700">beta</span>
